@@ -14,3 +14,10 @@ You just need to have the GPU trained model ready.
 ```python
 python inference.py [config_file] [model_checkpoint(.pth)] [input_folder] [output_folder]
 ```
+You only need these several lines:
+```python
+from mmdet.apis import init_detector
+
+model = init_detector(config_file, model_checkpoint)
+bboxes, labels = model.detect(img)
+```
